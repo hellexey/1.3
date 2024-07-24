@@ -5,23 +5,22 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+  background-color: #F0F0F0;
 
 .header {
+  background-color: #FFFFFF;
   width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
 .header__left {
   display: flex;
-  box-sizing: border-box;
   align-items: center;
-  margin-top: 20px;
-  margin-left: 10px;
 }
 
 .btn {
@@ -30,48 +29,44 @@ body {
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .btn--burger {
   background: url('../img/burger.svg') no-repeat center;
-  margin: 0 0 0 10px;
+
 }
 
 .btn--main-page {
   background: url('../img/logo.svg') no-repeat center;
   width: 97px;
   height: 51px;
-  border: none;
-  margin: 0 0 0 20px;
 }
 
 .header__right {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  box-sizing: border-box;
-  margin-right: 20px;
-  margin-top: 20px;
+}
+
+.btn--call, .btn--chat, .btn--profile {
+  display: none;
 }
 
 .btn--call {
-  display: none;
   background: url('../img/call.svg') no-repeat center;
 }
 
 .btn--chat {
-  display: none;
   background: url('../img/chat.svg') no-repeat center;
 }
 
 .btn--profile {
-  display: none;
   background: url('../img/profile.svg') no-repeat center;
 }
 
 .btn--search {
   position: relative;
-  margin: 0 10px 0 0;
+  margin-right: 10px;
   background: url('../img/checkstatus.svg') no-repeat center;
 }
 
@@ -95,8 +90,6 @@ body {
   letter-spacing: -0.6px;
   font-weight: 800;
   color: #1B1C21;
-  margin-left: 16px;
-  padding-top: 25px;
   display: flex;
   align-items: center;
 }
@@ -116,16 +109,15 @@ body {
 }
 
 main {
-  background-color: #F8f8f8;
+  background-color: #F0F0F0;
+  padding: 20px;
 }
 
 .slide-menu {
   display: flex;
   flex-wrap: nowrap;
   overflow: scroll;
-  margin-left: 16px;
-  max-height: 82px;
-  max-width: 1063px;
+  margin-bottom: 16px;
 }
 
 .slide-menu::after {
@@ -151,10 +143,10 @@ main {
   color: #7E7E82;
   border: none;
   background: none;
-  padding: 8px 9px 8px 17px;
+  padding: 8px 17px;
 }
 
-.slide-menu__btn:hover {
+.slide-menu__btn:hover, .slide-menu__btn--active {
   background: #FFFFFF;
   border: 2px solid #B8FFEC;
   border-radius: 6px;
@@ -162,25 +154,22 @@ main {
 
 .slide-menu__btn--repair-brands,
 .slide-menu__btn--feedback {
-  display: none;
+  display: flex;
 }
 
 .main-content {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .main-content__info {
-  min-width: 288px;
-  min-height: 90px;
-  max-height: 160px;
-  margin-left: 16px;
+  flex: 1 1 50%;
+  max-width: 100%;
+  padding-right: 20px;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.2px;
-  padding: 0 35px 35px 0;
 }
 
 article {
@@ -189,11 +178,11 @@ article {
 }
 
 .btn--readmore {
+  margin: 15px;
   height: 24px;
   width: 132px;
-  margin-top: 8px;
   border: none;
-  background-color: #F8f8f8;
+  background-color: #F0F0F0;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
@@ -207,8 +196,10 @@ article {
 }
 
 .main-content__image {
-  width: 100%;
+  flex: 1 1 50%;
+  max-width: 100%;
   align-self: center;
+  object-fit: contain;
 }
 
 @media screen and (min-width: 768px) {
@@ -216,24 +207,25 @@ article {
     content: '';
     width: 2px;
     height: 32px;
-    background-color: #EAEAEA;
+    background-color: #F0F0F0;
     position: absolute;
-    top: 25px;
+    top: 15px;
     left: 70px;
   }
 
-  .btn--call {
+  .btn--call, .btn--chat, .btn--profile {
     display: flex;
+  }
+
+  .btn--call {
     margin-right: 15px;
   }
 
   .btn--chat {
-    display: flex;
     margin-right: 15px;
   }
 
   .btn--profile {
-    display: flex;
     margin-right: 20px;
   }
 
@@ -242,22 +234,15 @@ article {
   }
 
   article {
-    overflow: hidden;
     min-height: 150px;
-    min-width: 312px;
   }
 
   .main-content__image {
-    align-self: center;
     max-width: 360px;
     max-height: 259px;
     margin-right: 40px;
     margin-top: 20px;
     border-radius: 5%;
-  }
-
-  .main-content {
-    display: flex;
   }
 
   .main-content__info {
@@ -294,24 +279,9 @@ article {
   }
 
   main {
+    background-color: #F0F0F0;
     padding-top: 20px;
     max-width: 1120px;
-  }
-
-  .main-content {
-    display: flex;
-  }
-
-  .slide-menu__btn--repair-brands {
-    display: flex;
-  }
-
-  .slide-menu__btn--feedback {
-    display: flex;
-  }
-
-  main {
-    min-height: 535px;
   }
 
   .main-content {
@@ -355,19 +325,7 @@ article {
     color: #1B1C21;
   }
 
-  .btn--repair {
+  .btn--repair, .label--btn-repair, .btn--search, .label--btn-search {
     position: relative;
   }
-
-  .label--btn-repair {
-    position: relative;
-  }
-
-  .btn--search {
-    position: relative;
-  }
-
-  .label--btn-search {
-    position: relative;
-  }
-}
+}}
